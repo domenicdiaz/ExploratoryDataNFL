@@ -45,7 +45,7 @@ pbp_rp %>%
   summarize(mean_epa = mean(epa), success_rate = mean(success), ypc=mean(yards_gained), plays=n()) %>%
   arrange(desc(mean_epa)) %>%
   filter(plays>40)
-schotty <- pbp_rp %>%
+passfirst <- pbp_rp %>%
   filter(wp>.20 & wp<.80 & down<=2 & qtr<=2 & half_seconds_remaining>120) %>%
   group_by(posteam) %>%
   summarize(mean_pass=mean(pass), plays=n()) %>%
